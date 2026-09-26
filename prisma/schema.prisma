@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum CourseStatus {
+  OPEN
+  CLOSED
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
+  REFUNDED
+}
+
+enum ContactStatus {
+  NEW
+  REPLIED
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  ADMIN
+}
+
+model Course {
+  id               String       @id @default(cuid())
+  title            String
+  slug             String       @unique
+  description      String
+  shortDescription String
+  fee              Int
+  status           CourseStatus @default(OPEN)
+  duration         String
+  image            String
+  technologies     String[]
+  learningOverview String[]
+  projects         String[]
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  enrollments      Enrollment[]
+
+  @@index([status])
+  @@index([slug])
+}
+
+model Enrollment {
+  id               String        @id @default(cuid())
+  enrollmentNumber String        @unique
+  fullName         String
+  email            String
+  phone            String
+  qualification    String?
+  graduationYear   Int?
+  city             String?
+  courseId         String
+  amount           Int
+  paymentStatus    PaymentStatus  @default(PENDING)
+  razorpayOrderId  String?
+  razorpayPaymentId String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  course           Course        @relation(fields: [courseId], references: [id])
+  payment          Payment?
+
+  @@index([email])
+  @@index([courseId])
+  @@index([paymentStatus])
+}
+
+model Payment {
+  id               String        @id @default(cuid())
+  enrollmentId     String        @unique
+  razorpayOrderId  String?
+  razorpayPaymentId String?
+  amount           Int
+  currency         String        @default("INR")
+  status           PaymentStatus @default(PENDING)
+  signature        String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  enrollment       Enrollment    @relation(fields: [enrollmentId], references: [id])
+
+  @@index([razorpayOrderId])
+  @@index([razorpayPaymentId])
+}
+
+model Admin {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String
+  role         AdminRole @default(SUPER_ADMIN)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model ContactMessage {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  status    ContactStatus @default(NEW)
+  createdAt DateTime      @default(now())
+}
