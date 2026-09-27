@@ -56,7 +56,7 @@ export default function EnrollPage() {
           <div className="rounded-[28px] border border-white/10 bg-slate-900/80 p-8">
             <p className="text-xs uppercase tracking-[0.2em] text-sky-300">Enrollment</p>
             <h1 className="mt-4 text-4xl font-semibold text-white">Begin your learning journey.</h1>
-            <p className="mt-4 text-slate-300">The initial enrollment fee is ₹299. An additional program fee may become payable only when the relevant condition in the program terms is met.</p>
+            <p className="mt-4 text-slate-300">Pay ₹299 once to enroll. The ₹24,700 course and job support fee is due to Nexiquill only after you receive an offer letter and get placed. If you do not receive an offer letter or do not get placed, you owe Nexiquill no additional money beyond the ₹299 enrollment fee.</p>
           </div>
 
           <form onSubmit={handleSubmit} className="rounded-[28px] border border-white/10 bg-slate-900/80 p-6">

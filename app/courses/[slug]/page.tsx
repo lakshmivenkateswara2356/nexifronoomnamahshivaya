@@ -76,8 +76,8 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
             <div className="space-y-8">
               <div className="rounded-[28px] border border-white/10 bg-slate-900/80 p-8">
                 <h2 className="text-2xl font-semibold text-white">Fee information</h2>
-                <p className="mt-4 text-slate-300">Initial enrollment: ₹299</p>
-                <p className="mt-3 text-slate-300">An additional ₹24,700 program fee may become payable when the applicable internship/placement condition specified in the program terms is met.</p>
+                <p className="mt-4 text-slate-300">Pay the one-time ₹299 enrollment fee to join the course.</p>
+                <p className="mt-3 text-slate-300">The ₹24,700 course and job support fee is due to Nexiquill only after you receive an offer letter and get placed. If you do not receive an offer letter or do not get placed, you pay no additional money to Nexiquill beyond the ₹299 enrollment fee.</p>
               </div>
 
               <div className="rounded-[28px] border border-white/10 bg-slate-900/80 p-8">

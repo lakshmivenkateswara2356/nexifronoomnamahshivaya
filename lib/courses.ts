@@ -35,7 +35,7 @@ export const courses: CourseItem[] = [
     faq: [
       { question: 'What is the enrollment fee?', answer: 'The initial enrollment fee is ₹299.' },
       { question: 'Which courses are currently open?', answer: 'Python Full Stack + GenAI and Frontend Development + GenAI are currently open.' },
-      { question: 'When do I pay ₹24,700?', answer: 'An additional ₹24,700 program fee may become payable when the applicable internship/placement condition specified in the program terms is met.' },
+      { question: 'When do I pay ₹24,700?', answer: 'The ₹24,700 course and job support fee is due to Nexiquill only after you receive an offer letter and get placed. If you do not receive an offer letter or do not get placed, you owe Nexiquill no additional money beyond the ₹299 enrollment fee.' },
     ],
   },
   {
@@ -56,7 +56,7 @@ export const courses: CourseItem[] = [
     faq: [
       { question: 'What is the enrollment fee?', answer: 'The initial enrollment fee is ₹299.' },
       { question: 'Which courses are currently open?', answer: 'Python Full Stack + GenAI and Frontend Development + GenAI are currently open.' },
-      { question: 'When do I pay ₹24,700?', answer: 'An additional ₹24,700 program fee may become payable when the applicable internship/placement condition specified in the program terms is met.' },
+      { question: 'When do I pay ₹24,700?', answer: 'The ₹24,700 course and job support fee is due to Nexiquill only after you receive an offer letter and get placed. If you do not receive an offer letter or do not get placed, you owe Nexiquill no additional money beyond the ₹299 enrollment fee.' },
     ],
   },
   {

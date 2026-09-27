@@ -1,4 +1,4 @@
-import { ArrowRight, BrainCircuit, BriefcaseBusiness, CheckCircle2, Code2, Layers3, Sparkles, TerminalSquare } from 'lucide-react';
+import { ArrowRight, BrainCircuit, BriefcaseBusiness, CheckCircle2, Code2, Layers3, MessageCircle, Sparkles, TerminalSquare } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
@@ -71,17 +71,15 @@ export default function HomePage() {
                   </div>
 
                   <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p className="text-sm text-slate-500">Step 2: Program fee</p>
+                    <p className="text-sm text-slate-500">Only after an offer and placement</p>
                     <p className="mt-2 text-2xl font-bold text-slate-900">₹24,700</p>
-                    <p className="mt-1 text-sm text-slate-600">May be required only when conditions are met</p>
+                    <p className="mt-1 text-sm text-slate-600">Course and job support fee, due only after you receive an offer letter and get placed.</p>
                   </div>
                 </div>
 
-                <div className="mt-5 rounded-xl bg-slate-900 p-4 text-sm text-slate-100">
-                  <p className="font-medium">What this means</p>
-                  <p className="mt-2 leading-6 text-slate-300">
-                    You begin with a small ₹299 enrollment. The additional fee is based on the program terms and internship/placement conditions.
-                  </p>
+                <div className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-950">
+                  <p className="font-semibold">No offer letter and no placement?</p>
+                  <p className="mt-2 leading-6">You will not pay the ₹24,700. The only payment is the one-time ₹299 enrollment fee.</p>
                 </div>
               </div>
             </div>
@@ -225,46 +223,46 @@ export default function HomePage() {
           </Container>
         </section>
 
-        <section className="bg-slate-900 py-20 text-white">
-          <Container className="rounded-[32px] border border-slate-700 bg-slate-950 p-8 sm:p-10">
+        <section className="border-y border-sky-100 bg-gradient-to-br from-sky-50 via-white to-emerald-50 py-20 text-slate-900">
+          <Container>
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.22em] text-blue-300">Fee structure</p>
-                <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">Start for ₹299 and learn in a clear step-by-step way.</h2>
-              </div>
-              <div className="text-left lg:text-right">
-                <p className="text-sm text-slate-300">Initial enrollment</p>
-                <p className="text-4xl font-semibold text-blue-300">₹299</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-800">Simple, outcome-based pricing</p>
+                <h2 className="mt-3 max-w-3xl text-3xl font-semibold text-slate-950 sm:text-4xl">Pay ₹299 to enroll. Pay ₹24,700 only after placement.</h2>
+                <p className="mt-3 max-w-2xl text-slate-700">The ₹24,700 covers the course and job support. It is due only after you receive an offer letter and get placed.</p>
               </div>
             </div>
 
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
-              <div className="rounded-2xl border border-slate-700 bg-slate-900 p-5">
-                <p className="text-sm text-slate-300">Step 1</p>
-                <p className="mt-2 text-2xl font-bold text-white">₹299</p>
-                <p className="mt-2 text-sm text-slate-400">Pay to enroll in the program.</p>
+            <div className="mt-8 grid gap-5 md:grid-cols-3">
+              <div className="rounded-2xl border border-sky-200 bg-sky-100 p-6">
+                <p className="text-sm font-semibold text-sky-950">1. Enroll and start learning</p>
+                <p className="mt-3 text-3xl font-bold text-sky-950">₹299</p>
+                <p className="mt-2 text-sm leading-6 text-sky-950">One-time enrollment fee paid when you join the course.</p>
               </div>
-              <div className="rounded-2xl border border-slate-700 bg-slate-900 p-5">
-                <p className="text-sm text-slate-300">Step 2</p>
-                <p className="mt-2 text-2xl font-bold text-white">₹24,700</p>
-                <p className="mt-2 text-sm text-slate-400">May be required under program terms.</p>
+              <div className="rounded-2xl border border-amber-200 bg-amber-100 p-6">
+                <p className="text-sm font-semibold text-amber-950">2. After you get placed</p>
+                <p className="mt-3 text-3xl font-bold text-amber-950">₹24,700</p>
+                <p className="mt-2 text-sm leading-6 text-amber-950">Pay Nexiquill only after you receive an offer letter and get placed. This is for the course and job support.</p>
               </div>
-              <div className="rounded-2xl border border-slate-700 bg-slate-900 p-5">
-                <p className="text-sm text-slate-300">Step 3</p>
-                <p className="mt-2 text-2xl font-bold text-white">Learn</p>
-                <p className="mt-2 text-sm text-slate-400">Study, build, and grow with support.</p>
+              <div className="rounded-2xl border border-emerald-200 bg-emerald-100 p-6">
+                <p className="text-sm font-semibold text-emerald-950">No offer letter or placement?</p>
+                <p className="mt-3 text-3xl font-bold text-emerald-950">₹0 extra</p>
+                <p className="mt-2 text-sm leading-6 text-emerald-950">You owe no additional money to Nexiquill. You only pay the ₹299 enrollment fee.</p>
               </div>
-            </div>
-
-            <div className="mt-8 rounded-2xl border border-slate-700 bg-slate-900/80 p-5 text-slate-200">
-              <p>
-                The additional fee is only considered when the stated internship or placement condition is met. We explain the details clearly before you proceed.
-              </p>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
               <Button href="/enroll">Enroll for ₹299</Button>
               <Button href="/courses" variant="secondary">Explore Programs</Button>
+              <a
+                href="https://wa.me/919505325418?text=Hi%2C%20I%20have%20a%20question%20about%20Nexiquill%20courses%20and%20fees."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
+              >
+                <MessageCircle aria-hidden="true" size={18} />
+                Chat with us on WhatsApp
+              </a>
             </div>
           </Container>
         </section>
