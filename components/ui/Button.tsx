@@ -19,11 +19,11 @@ export function Button({
   variant = 'primary',
   type = 'button',
 }: ButtonProps) {
-  const base = 'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400';
+  const base = 'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300';
   const variants = {
-    primary: 'bg-sky-500 text-white shadow-lg shadow-sky-900/30 hover:bg-sky-400',
-    secondary: 'bg-white/8 text-white border border-white/10 hover:bg-white/12',
-    ghost: 'text-sky-200 hover:bg-sky-500/10',
+    primary: 'bg-blue-600 text-white shadow-lg shadow-blue-600/20 hover:bg-blue-500',
+    secondary: 'bg-white text-slate-800 border border-slate-200 shadow-sm hover:bg-slate-50',
+    ghost: 'text-blue-600 hover:bg-blue-50',
   };
 
   if (href) {

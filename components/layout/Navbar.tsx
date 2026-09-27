@@ -18,15 +18,15 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
       <Container className="flex items-center justify-between py-4">
-        <Link href="/" className="text-xl font-bold tracking-[0.2em] text-white">
+        <Link href="/" className="text-xl font-bold tracking-[0.2em] text-slate-900">
           NEXIQUILL
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm text-slate-300 transition hover:text-white">
+            <Link key={item.href} href={item.href} className="text-sm text-slate-600 transition hover:text-slate-900">
               {item.label}
             </Link>
           ))}
@@ -40,7 +40,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex rounded-full border border-white/10 p-2 text-white md:hidden"
+          className="inline-flex rounded-full border border-slate-200 p-2 text-slate-800 md:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-label="Toggle navigation menu"
         >
@@ -49,10 +49,10 @@ export function Navbar() {
       </Container>
 
       {open ? (
-        <div className="border-t border-white/10 bg-slate-950 md:hidden">
+        <div className="border-t border-slate-200 bg-white md:hidden">
           <Container className="flex flex-col gap-4 py-4">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="text-slate-200">
+              <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="text-slate-700">
                 {item.label}
               </Link>
             ))}
