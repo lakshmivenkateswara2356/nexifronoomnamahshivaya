@@ -1,287 +1,53 @@
-import { ArrowRight, BrainCircuit, BriefcaseBusiness, CheckCircle2, Code2, Layers3, MessageCircle, Sparkles, TerminalSquare } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BrainCircuit, CloudCog, Code2, Layers3, LifeBuoy, ShieldCheck, Workflow } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
-import { SectionHeading } from '@/components/ui/SectionHeading';
-import { openCourses, closedCourses } from '@/lib/courses';
-
-const trustHighlights = [
-  { icon: Code2, title: 'Easy to follow', text: 'Simple lessons explained in clear and practical language.' },
-  { icon: Layers3, title: 'Hands-on learning', text: 'Build projects that help you understand real work.' },
-  { icon: BriefcaseBusiness, title: 'Career ready', text: 'Learn the skills that employers look for in tech roles.' },
-  { icon: Sparkles, title: 'AI + tech', text: 'Use modern tools with software and AI learning together.' },
-];
-
-const technologies = ['Python', 'JavaScript', 'React', 'Node.js', 'HTML5', 'CSS3', 'REST APIs', 'SQL', 'MongoDB', 'Git', 'Docker', 'Linux', 'Generative AI', 'LLMs', 'Cloud'];
-
-const whyCards = [
-  { icon: BrainCircuit, title: 'Practical skills' },
-  { icon: Code2, title: 'Beginner friendly' },
-  { icon: Sparkles, title: 'AI-powered learning' },
-  { icon: TerminalSquare, title: 'Real projects' },
-  { icon: BriefcaseBusiness, title: 'Career support' },
-  { icon: Layers3, title: 'Structured learning' },
-];
-
-const projects = ['AI Resume Analyzer', 'AI Interview Assistant', 'E-Commerce Application', 'AI Content Generator', 'Full Stack Dashboard'];
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main className="overflow-x-hidden bg-white text-slate-900">
-        <section className="border-b border-slate-200 bg-gradient-to-b from-white to-slate-50">
-          <Container className="grid items-center gap-10 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:py-24">
-            <div>
-              <div className="mb-6 inline-flex rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
-                Learn. Build. Grow.
-              </div>
-              <h1 className="max-w-xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-                Learn practical tech skills in simple, clear steps.
+      <main>
+        <section className="hero-band overflow-hidden">
+          <Container className="relative grid min-h-[650px] items-center gap-14 py-16 lg:grid-cols-[0.92fr_1.08fr] lg:py-20">
+            <div className="relative z-10">
+              <div className="eyebrow mb-7"><span className="eyebrow-dot" /> Product engineering, end to end</div>
+              <h1 className="max-w-[680px] text-5xl font-semibold leading-[1.02] tracking-normal text-[#f6f7f1] sm:text-6xl lg:text-[4.5rem]">
+                Software that moves your business <span className="text-[#d8f078]">forward.</span>
               </h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-                Build your future with beginner-friendly courses in software development, AI, and real-world projects that are easy to understand and apply.
-              </p>
-
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Button href="/courses">Explore Courses</Button>
-                <Button href="/enroll" variant="secondary">Enroll for ₹299</Button>
+              <p className="mt-7 max-w-xl text-lg leading-8 text-white/65">Nexiquill is your product engineering partner, turning ambitious ideas into dependable SaaS platforms, intelligent tools, and digital experiences.</p>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <Button href="/contact" className="group gap-2 bg-[#d8f078] text-[#171b14] shadow-none hover:bg-[#e6fb9a]">Start a conversation <ArrowRight size={17} /></Button>
+                <Button href="/services" variant="secondary" className="gap-2">Explore services <ArrowUpRight size={16} /></Button>
               </div>
-
-              <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-600">
-                <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-600" /> Beginner-friendly learning</div>
-                <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-600" /> Real projects</div>
-                <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-600" /> Career guidance</div>
-              </div>
+              <div className="mt-12 flex items-center gap-3 text-sm text-white/55"><span className="h-2 w-2 rounded-full bg-[#d8f078]" /> One team from idea through iteration</div>
             </div>
-
-            <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_30px_80px_-40px_rgba(37,99,235,0.25)]">
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-medium text-slate-500">Course fee</p>
-                  <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">Simple plan</span>
-                </div>
-
-                <div className="mt-5 space-y-4">
-                  <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4">
-                    <p className="text-sm text-blue-700">Step 1: Start today</p>
-                    <p className="mt-2 text-3xl font-bold text-slate-900">₹299</p>
-                    <p className="mt-1 text-sm text-slate-600">One-time enrollment fee</p>
-                  </div>
-
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p className="text-sm text-slate-500">Only after an offer and placement</p>
-                    <p className="mt-2 text-2xl font-bold text-slate-900">₹24,700</p>
-                    <p className="mt-1 text-sm text-slate-600">Course and job support fee, due only after you receive an offer letter and get placed.</p>
+            <div className="relative mx-auto w-full max-w-[600px] lg:ml-auto">
+              <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-[#d8f078]/10 blur-3xl" />
+              <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#f5f6f1] text-[#20251f] shadow-[0_32px_100px_-42px_rgba(0,0,0,0.8)]">
+                <div className="flex items-center justify-between border-b border-[#20251f]/10 px-5 py-4"><div className="flex items-center gap-2.5"><span className="grid h-7 w-7 place-items-center rounded-md bg-[#20251f] text-[#d8f078]"><Layers3 size={14} /></span><span className="text-xs font-semibold tracking-wide">NEXIQUILL / PRODUCT PREVIEW</span></div><span className="text-[10px] text-[#667064]">ILLUSTRATIVE UI</span></div>
+                <div className="grid min-h-[350px] sm:grid-cols-[130px_1fr]">
+                  <aside className="hidden border-r border-[#20251f]/10 p-4 sm:block"><p className="mb-4 px-2 text-[9px] font-semibold tracking-[0.16em] text-[#92998d]">WORKSPACE</p>{['Overview', 'Projects', 'Analytics', 'Settings'].map((item, index) => <div key={item} className={`mb-1 flex items-center gap-2 rounded-md px-2 py-2 text-[10px] ${index === 0 ? 'bg-[#20251f] text-white' : 'text-[#727b70]'}`}><span className={`h-1.5 w-1.5 rounded-full ${index === 0 ? 'bg-[#d8f078]' : 'bg-[#bdc3b7]'}`} />{item}</div>)}</aside>
+                  <div className="p-5 sm:p-6"><div className="flex items-start justify-between gap-4"><div><p className="text-[10px] text-[#828a7e]">MONDAY, 28 SEPTEMBER</p><h2 className="mt-1 text-xl font-semibold tracking-normal">Good morning, team</h2></div><span className="rounded-md border border-[#20251f]/10 bg-white px-2.5 py-1.5 text-[9px] text-[#5f685d]">Last 30 days</span></div>
+                    <div className="mt-5 grid grid-cols-2 gap-3"><div className="rounded-md border border-[#20251f]/10 bg-white p-3.5"><p className="text-[9px] text-[#737c70]">PRODUCT FOCUS</p><p className="mt-2 text-2xl font-semibold">Roadmap</p><p className="mt-1 text-[9px] text-[#5f9067]">Scope in motion</p></div><div className="rounded-md border border-[#20251f]/10 bg-white p-3.5"><p className="text-[9px] text-[#737c70]">NEXT MILESTONE</p><p className="mt-2 text-xl font-semibold">Build review</p><p className="mt-1 text-[9px] text-[#5f9067]">Ready for feedback</p></div></div>
+                    <div className="mt-3 rounded-md border border-[#20251f]/10 bg-white p-3.5"><div className="flex items-center justify-between"><div><p className="text-[10px] font-semibold">Delivery rhythm</p><p className="mt-1 text-[9px] text-[#8a9186]">A steady path from idea to launch</p></div><span className="text-[9px] text-[#5f9067]">IN PROGRESS</span></div><div className="mt-4 flex h-[90px] items-end gap-1.5 border-b border-[#20251f]/10 pb-1">{[38, 52, 44, 68, 56, 74, 63, 88, 70, 96, 78, 100].map((height, index) => <span key={index} className={`flex-1 rounded-t-[2px] ${index > 8 ? 'bg-[#d8f078]' : 'bg-[#cbd1c3]'}`} style={{ height: `${height}%` }} />)}</div><div className="mt-2 flex justify-between text-[8px] text-[#92998d]"><span>DISCOVER</span><span>DESIGN</span><span>BUILD</span><span>LAUNCH</span></div></div>
+                    <div className="mt-3 flex items-center gap-2 rounded-md bg-[#e9eddd] px-3.5 py-2.5"><ShieldCheck size={14} className="text-[#536e3a]" /><span className="text-[9px] font-medium">Your data is encrypted and protected</span></div>
                   </div>
                 </div>
-
-                <div className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-950">
-                  <p className="font-semibold">No offer letter and no placement?</p>
-                  <p className="mt-2 leading-6">You will not pay the ₹24,700. The only payment is the one-time ₹299 enrollment fee.</p>
-                </div>
+                <div className="flex items-center justify-between border-t border-[#20251f]/10 px-5 py-3 text-[9px] text-[#858d81]"><span>Illustrative product interface</span><span>BUILT FOR WHAT&apos;S NEXT</span></div>
               </div>
             </div>
           </Container>
         </section>
-
-        <section className="border-b border-slate-200 py-14">
-          <Container>
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-              {trustHighlights.map(({ icon: Icon, title, text }) => (
-                <div key={title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-transform duration-200 hover:-translate-y-1">
-                  <div className="mb-4 inline-flex rounded-xl bg-blue-50 p-3 text-blue-600">
-                    <Icon size={22} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">{text}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        <section className="py-20" id="learning-journey">
-          <Container>
-            <SectionHeading
-              eyebrow="How it works"
-              title="A simple path from student to confident builder"
-              description="Each step is clear, practical, and designed to help you learn steadily and grow with confidence."
-            />
-            <div className="mt-12 space-y-6">
-              {[
-                ['01', 'Enroll', 'Pay the initial ₹299 to start your journey.'],
-                ['02', 'Learn', 'Follow the training, lessons, and guided activities.'],
-                ['03', 'Build', 'Practice through projects and assignments.'],
-                ['04', 'Apply', 'Use your skills in internship-based learning where available.'],
-                ['05', 'Grow', 'Move toward your career goals with preparation and support.'],
-              ].map(([step, title, text], index) => (
-                <div key={title} className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-5 md:flex-row md:items-center md:justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 font-mono text-lg font-semibold text-white">{step}</div>
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.2em] text-blue-700">{step}</p>
-                      <h3 className="mt-1 text-xl font-semibold text-slate-900">{title}</h3>
-                    </div>
-                  </div>
-                  <p className="max-w-xl text-slate-600">{text}</p>
-                  {index < 4 ? <ArrowRight className="hidden text-blue-600 md:block" size={18} /> : null}
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        <section className="border-y border-slate-200 bg-slate-50 py-20">
-          <Container>
-            <SectionHeading eyebrow="Courses" title="Choose the course that fits your goals" description="Each program is designed to help you learn useful skills with clear steps and hands-on work." />
-            <div className="mt-10 grid gap-6 lg:grid-cols-2">
-              {openCourses.map((course) => (
-                <div key={course.slug} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.2em] text-emerald-700">Enrollment open</p>
-                      <h3 className="mt-3 text-3xl font-semibold text-slate-900">{course.title}</h3>
-                    </div>
-                    <p className="rounded-full bg-blue-50 px-3 py-2 text-sm font-semibold text-blue-700">₹{course.fee}</p>
-                  </div>
-                  <p className="mt-4 text-slate-600">{course.shortDescription}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {course.technologies.slice(0, 6).map((tech) => (
-                      <span key={tech} className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">{tech}</span>
-                    ))}
-                  </div>
-                  <div className="mt-6 flex gap-3">
-                    <Button href={`/courses/${course.slug}`}>View Course</Button>
-                    <Button href="/enroll" variant="secondary">Enroll Now</Button>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-16">
-              <SectionHeading eyebrow="Upcoming / current batches" title="Some batches are already running" description="These batches have already started, so new admissions are currently closed." />
-              <div className="mt-10 grid gap-6 lg:grid-cols-2">
-                {closedCourses.map((course) => (
-                  <div key={course.slug} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
-                    <div className="flex items-center justify-between gap-4">
-                      <h3 className="text-2xl font-semibold text-slate-900">{course.title}</h3>
-                      <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-700">Closed</span>
-                    </div>
-                    <p className="mt-5 text-slate-600">This batch has already started. New enrollments are not open right now.</p>
-                    <div className="mt-6">
-                      <Button href={`/courses/${course.slug}`} variant="secondary">View Course</Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        <section className="py-20" id="why-nexiquill">
-          <Container>
-            <SectionHeading eyebrow="Why choose us" title="A learning experience built for real progress" description="We keep things simple, practical, and focused on skills that matter in the real world." />
-            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {whyCards.map(({ icon: Icon, title }) => (
-                <div key={title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1">
-                  <div className="mb-4 inline-flex rounded-xl bg-violet-50 p-3 text-violet-600">
-                    <Icon size={22} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        <section className="border-y border-slate-200 bg-slate-50 py-20">
-          <Container>
-            <SectionHeading eyebrow="Tools you will use" title="Learn the tools that matter in modern tech" description="Build skills across software, web development, AI, and practical digital workflows." align="center" />
-            <div className="mt-10 flex flex-wrap justify-center gap-3">
-              {technologies.map((tech) => (
-                <span key={tech} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700 shadow-sm transition-transform duration-200 hover:scale-[1.04]">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        <section className="py-20">
-          <Container>
-            <SectionHeading eyebrow="Projects" title="Learn by building simple real-world products" description="These project ideas show the kind of practical work students explore during the program." />
-            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-              {projects.map((project) => (
-                <div key={project} className="rounded-[24px] border border-slate-200 bg-gradient-to-b from-slate-50 to-white p-5 shadow-sm">
-                  <p className="mb-2 text-xs uppercase tracking-[0.2em] text-blue-700">Example</p>
-                  <h3 className="text-xl font-semibold text-slate-900">{project}</h3>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        <section className="border-y border-sky-100 bg-gradient-to-br from-sky-50 via-white to-emerald-50 py-20 text-slate-900">
-          <Container>
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-800">Simple, outcome-based pricing</p>
-                <h2 className="mt-3 max-w-3xl text-3xl font-semibold text-slate-950 sm:text-4xl">Pay ₹299 to enroll. Pay ₹24,700 only after placement.</h2>
-                <p className="mt-3 max-w-2xl text-slate-700">The ₹24,700 covers the course and job support. It is due only after you receive an offer letter and get placed.</p>
-              </div>
-            </div>
-
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
-              <div className="rounded-2xl border border-sky-200 bg-sky-100 p-6">
-                <p className="text-sm font-semibold text-sky-950">1. Enroll and start learning</p>
-                <p className="mt-3 text-3xl font-bold text-sky-950">₹299</p>
-                <p className="mt-2 text-sm leading-6 text-sky-950">One-time enrollment fee paid when you join the course.</p>
-              </div>
-              <div className="rounded-2xl border border-amber-200 bg-amber-100 p-6">
-                <p className="text-sm font-semibold text-amber-950">2. After you get placed</p>
-                <p className="mt-3 text-3xl font-bold text-amber-950">₹24,700</p>
-                <p className="mt-2 text-sm leading-6 text-amber-950">Pay Nexiquill only after you receive an offer letter and get placed. This is for the course and job support.</p>
-              </div>
-              <div className="rounded-2xl border border-emerald-200 bg-emerald-100 p-6">
-                <p className="text-sm font-semibold text-emerald-950">No offer letter or placement?</p>
-                <p className="mt-3 text-3xl font-bold text-emerald-950">₹0 extra</p>
-                <p className="mt-2 text-sm leading-6 text-emerald-950">You owe no additional money to Nexiquill. You only pay the ₹299 enrollment fee.</p>
-              </div>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="/enroll">Enroll for ₹299</Button>
-              <Button href="/courses" variant="secondary">Explore Programs</Button>
-              <a
-                href="https://wa.me/919505325418?text=Hi%2C%20I%20have%20a%20question%20about%20Nexiquill%20courses%20and%20fees."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
-              >
-                <MessageCircle aria-hidden="true" size={18} />
-                Chat with us on WhatsApp
-              </a>
-            </div>
-          </Container>
-        </section>
-
-        <section className="py-20">
-          <Container>
-            <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-8 text-center shadow-sm">
-              <p className="text-xs uppercase tracking-[0.22em] text-blue-700">Ready to start?</p>
-              <h2 className="mt-4 text-4xl font-semibold text-slate-900">Start building your future today.</h2>
-              <p className="mx-auto mt-3 max-w-xl text-slate-600">
-                Choose a course, learn step by step, and start your journey in software and AI with confidence.
-              </p>
-              <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-                <Button href="/courses">Explore Courses</Button>
-                <Button href="/enroll" variant="secondary">Enroll for ₹299</Button>
-              </div>
-            </div>
-          </Container>
-        </section>
+        <section className="border-b border-[#20251f]/10 bg-[#e9ecdf] py-5"><Container className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-xs font-medium text-[#566051]"><span className="text-[10px] font-semibold tracking-[0.16em] text-[#80897b]">ONE PARTNER, END TO END</span><span>Product strategy</span><span>Experience design</span><span>Engineering</span><span>Cloud & AI</span><span>Ongoing support</span></Container></section>
+        <section className="py-24 sm:py-28" id="services"><Container><div className="flex flex-col justify-between gap-6 md:flex-row md:items-end"><div className="max-w-2xl"><p className="section-kicker">WHAT WE DO</p><h2 className="section-title">Everything your product needs to go further.</h2></div><p className="max-w-md pb-1 text-base leading-7 text-[#697165]">From a first clickable idea to the systems behind your next stage of growth, we bring the right disciplines together.</p></div>
+          <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-[#20251f]/10 bg-[#20251f]/10 sm:grid-cols-2 xl:grid-cols-3">{[
+            [Layers3, 'SaaS product development', 'From first product brief to a secure, scalable platform your customers can rely on.'], [Code2, 'Web applications', 'Fast, considered web experiences built around the work your users need to get done.'], [BrainCircuit, 'AI & automation', 'Useful AI features and workflow automation, integrated with care and clear guardrails.'], [CloudCog, 'Cloud & DevOps', 'Cloud foundations, delivery pipelines, and observability designed for steady growth.'], [Workflow, 'Product modernization', 'Make legacy systems easier to change, more reliable, and ready for what comes next.'], [LifeBuoy, 'Ongoing engineering', 'A long-term product partner for improvements, support, and the next release.'],
+          ].map(([Icon, title, text], index) => { const ServiceIcon = Icon as typeof Layers3; return <a href="/services" key={title as string} className="group min-h-[220px] bg-[#f6f7f1] p-6 transition-colors hover:bg-white sm:p-7"><div className="flex items-center justify-between"><span className="grid h-10 w-10 place-items-center rounded-md bg-[#e8eadf] text-[#30382b] transition-colors group-hover:bg-[#d8f078]"><ServiceIcon size={19} /></span><span className="text-xs text-[#9ba195]">0{index + 1}</span></div><h3 className="mt-6 text-lg font-semibold tracking-normal">{title as string}</h3><p className="mt-2 max-w-sm text-sm leading-6 text-[#70786d]">{text as string}</p><ArrowUpRight size={16} className="mt-4 text-[#818a7c] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></a>; })}</div>
+          <div className="mt-7"><Button href="/services" variant="secondary" className="gap-2">See how we can help <ArrowRight size={15} /></Button></div></Container></section>
+        <section className="bg-[#e9ecdf] py-24 sm:py-28" id="approach"><Container className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-start"><div className="lg:sticky lg:top-28"><p className="section-kicker">HOW WE WORK</p><h2 className="section-title">Small steps. Strong foundations. Real momentum.</h2><p className="mt-5 max-w-md leading-7 text-[#687064]">Senior attention, transparent decisions, and a delivery rhythm that keeps the important work moving.</p><div className="mt-8"><Button href="/about" variant="secondary" className="gap-2">Meet Nexiquill <ArrowUpRight size={15} /></Button></div></div><div className="divide-y divide-[#20251f]/15 border-y border-[#20251f]/15">{[['01', 'Discover', 'We align on users, business goals, constraints, and the right first release.'], ['02', 'Design & build', 'A focused team shapes the experience and ships in clear, reviewable increments.'], ['03', 'Launch & learn', 'We prepare for production, watch how it performs, and improve from real feedback.']].map(([number, title, text]) => <div key={number} className="grid gap-4 py-7 sm:grid-cols-[70px_1fr] sm:gap-6"><span className="text-sm font-medium text-[#859077]">{number} / 03</span><div><h3 className="text-xl font-semibold tracking-normal">{title}</h3><p className="mt-2 max-w-lg leading-7 text-[#687064]">{text}</p></div></div>)}</div></Container></section>
+        <section className="py-24 sm:py-28"><Container><div className="relative overflow-hidden rounded-lg bg-[#20251f] px-7 py-12 text-[#f6f7f1] sm:px-12 sm:py-16 lg:px-16"><div className="absolute -right-10 -top-20 h-72 w-72 rounded-full border border-white/10" /><div className="absolute -right-1 top-[-52px] h-56 w-56 rounded-full border border-white/10" /><div className="relative flex flex-col gap-8 md:flex-row md:items-end md:justify-between"><div className="max-w-2xl"><p className="text-xs font-semibold tracking-[0.18em] text-[#d8f078]">HAVE A PRODUCT IN MIND?</p><h2 className="mt-4 text-3xl font-semibold leading-tight tracking-normal sm:text-4xl">Let&apos;s make your next idea real.</h2><p className="mt-4 max-w-xl leading-7 text-white/60">Tell us what you&apos;re building, where you&apos;re stuck, or where you want to go. We&apos;ll work out the next step together.</p></div><Button href="/contact" className="group shrink-0 gap-2 bg-[#d8f078] text-[#171b14] shadow-none hover:bg-[#e6fb9a]">Talk to our team <ArrowUpRight size={16} /></Button></div></div></Container></section>
       </main>
       <Footer />
     </>

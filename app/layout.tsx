@@ -15,14 +15,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
   title: {
-    default: 'Nexiquill | AI + Software Engineering Learning',
+    default: 'Nexiquill | Product Engineering & SaaS Development',
     template: '%s | Nexiquill',
   },
   description:
-    'Nexiquill offers modern software engineering and Generative AI education through practical, career-focused learning programs.',
+    'Nexiquill builds SaaS products, web applications, AI solutions, and cloud platforms for ambitious teams, from product discovery through ongoing engineering.',
   openGraph: {
     title: 'Nexiquill',
-    description: 'Build the skills that build your future.',
+    description: 'End-to-end product engineering for what comes next.',
     url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
     siteName: 'Nexiquill',
     type: 'website',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Nexiquill',
-    description: 'AI + Software Engineering learning for the future.',
+    description: 'SaaS development, AI, cloud, and product engineering with one team from idea through iteration.',
   },
 };
 

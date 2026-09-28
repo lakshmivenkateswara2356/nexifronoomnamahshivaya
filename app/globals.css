@@ -1,14 +1,14 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #f6f7f1;
+  --foreground: #20251f;
   --card: #ffffff;
-  --muted: #475569;
-  --border: rgba(148, 163, 184, 0.22);
-  --accent: #2563eb;
-  --accent-soft: #dbeafe;
-  --success: #0f766e;
+  --muted: #687064;
+  --border: rgba(32, 37, 31, 0.14);
+  --accent: #d8f078;
+  --accent-soft: #e9ecdf;
+  --success: #587b5d;
 }
 
 @theme inline {
@@ -23,9 +23,54 @@ html {
 }
 
 body {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+.hero-band {
+  background-color: #20251f;
+  background-image: radial-gradient(ellipse at 76% 48%, rgba(216, 240, 120, 0.1), transparent 34%), linear-gradient(110deg, #20251f 0%, #262d24 58%, #30392d 100%);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(246, 247, 241, 0.66);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.eyebrow-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: #d8f078;
+}
+
+.section-kicker {
+  color: #738064;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.section-title {
+  margin-top: 0.8rem;
+  max-width: 42rem;
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+@media (min-width: 640px) {
+  .section-title {
+    font-size: 3rem;
+  }
 }
 
 * {
@@ -33,7 +78,7 @@ body {
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.18);
+  background: rgba(216, 240, 120, 0.5);
 }
 
 @media (prefers-reduced-motion: reduce) {

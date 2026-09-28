@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="150" viewBox="0 0 800 150" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Nexiquill - Where IQ Matters</title>
+  <g stroke="#102958" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 31h41c9 0 14 5 14 14v43M9 49h34M9 67h27M9 85h36c10 0 15-5 19-14l39-40h28" />
+    <path d="M75 85h24l33-34M84 29l40 42c5 6 10 9 19 9h20" />
+    <path d="M8 31h1M8 49h1M8 67h1M8 85h1" />
+  </g>
+  <text x="170" y="94" fill="#102958" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="700" letter-spacing="3">NEXIQUILL</text>
+  <g stroke="#102958" stroke-width="2.5" stroke-linecap="round">
+    <path d="M206 128h111M584 128h160" />
+    <circle cx="322" cy="128" r="4" fill="#102958" />
+    <circle cx="578" cy="128" r="4" fill="#102958" />
+  </g>
+  <text x="450" y="135" fill="#102958" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="8" text-anchor="middle">WHERE IQ MATTERS</text>
+</svg>
