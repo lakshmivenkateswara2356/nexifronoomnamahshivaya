@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/Container';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { CourseCard } from '@/components/courses/CourseCard';
+import { CourseInquiryCta } from '@/components/courses/CourseInquiryCta';
 import { openCourses, closedCourses } from '@/lib/courses';
 import { upfrontPaymentUrl } from '@/lib/payment';
 
@@ -66,7 +67,7 @@ export default function CoursesPage() {
                     <Link href={`/courses/${featuredCourse.slug}`} className="inline-flex items-center gap-2 rounded-md bg-[#20251f] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#394136]">
                       Full course details <ArrowRight size={15} />
                     </Link>
-                    <a href="/api/courses/brochure" className="inline-flex items-center gap-2 rounded-md border border-[#20251f]/15 px-5 py-3 text-sm font-semibold text-[#20251f] transition-colors hover:bg-[#f6f7f1]">
+                    <a href="/api/courses/brochure?v=20261118" className="inline-flex items-center gap-2 rounded-md border border-[#20251f]/15 px-5 py-3 text-sm font-semibold text-[#20251f] transition-colors hover:bg-[#f6f7f1]">
                       Download brochure PDF <ArrowDownToLine size={15} />
                     </a>
                   </div>
@@ -141,6 +142,7 @@ export default function CoursesPage() {
             </Container>
           </section>
         ) : null}
+        <CourseInquiryCta />
       </main>
       <Footer />
     </>

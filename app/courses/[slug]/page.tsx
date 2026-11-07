@@ -7,6 +7,7 @@ import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { getCourseBySlug } from '@/lib/courses';
 import { upfrontPaymentUrl } from '@/lib/payment';
+import { CourseInquiryCta } from '@/components/courses/CourseInquiryCta';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -131,7 +132,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
                 )}
               </div>
               <div className="mt-4 border-t border-[#20251f]/15 pt-4">
-                <a href="/api/courses/brochure" className="inline-flex items-center gap-2 text-sm font-semibold text-[#47533c] hover:text-[#20251f]">
+                <a href="/api/courses/brochure?v=20261118" className="inline-flex items-center gap-2 text-sm font-semibold text-[#47533c] hover:text-[#20251f]">
                   Download course brochure PDF <ArrowUpRight size={14} />
                 </a>
               </div>
@@ -149,6 +150,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
             </aside>
           </Container>
         </section>
+        <CourseInquiryCta courseSlug={course.slug} />
       </main>
       <Footer />
     </>

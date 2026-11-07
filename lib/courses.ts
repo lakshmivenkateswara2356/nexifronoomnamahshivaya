@@ -40,7 +40,7 @@ export const courses: CourseItem[] = [
       bookingFee: 299,
       remainingFee: 14700,
       seatLimit: 50,
-      enrollmentDeadline: '10 November 2026',
+      enrollmentDeadline: '18 November 2026',
     },
     image: '/images/courses/python-genai.jpg',
     technologies: [

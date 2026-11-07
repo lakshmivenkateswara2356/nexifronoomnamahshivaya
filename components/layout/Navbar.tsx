@@ -22,7 +22,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-[#20251f]/10 bg-[#f6f7f1]/95 text-[#20251f] backdrop-blur-xl">
       <Container className="flex items-center justify-between py-3.5">
         <Link href="/" aria-label="Nexiquill home" className="shrink-0">
-          <Image src="/nexiquill-logo.svg" alt="Nexiquill, where IQ matters" width={800} height={150} priority className="h-9 w-auto sm:h-11" />
+          <Image src="/nexiquill-logo.png" alt="Nexiquill, where IQ matters" width={1339} height={271} priority className="h-11 w-auto sm:h-12" />
         </Link>
 
         <nav className="hidden items-center gap-5 lg:flex">

@@ -8,7 +8,7 @@ export function Footer() {
       <Container className="flex flex-col gap-10 py-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.7fr]">
           <div>
-            <Image src="/nexiquill-logo.svg" alt="Nexiquill, where IQ matters" width={800} height={150} className="h-10 w-auto" />
+            <Image src="/nexiquill-logo.png" alt="Nexiquill, where IQ matters" width={1339} height={271} className="h-10 w-auto" />
             <p className="mt-4 max-w-sm text-sm leading-6 text-[#687064]">
               Product engineering and practical technology learning for what&apos;s next.
             </p>
