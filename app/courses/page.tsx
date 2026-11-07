@@ -88,7 +88,7 @@ export default function CoursesPage() {
                       <dd className="font-semibold text-[#20251f]">₹{featuredCourse.pricing.bookingFee.toLocaleString('en-IN')}</dd>
                     </div>
                     <div className="flex items-baseline justify-between gap-4">
-                      <dt className="text-[#596253]">Remaining after paid internship offer</dt>
+                      <dt className="text-[#596253]">Remaining after receiving an offer letter</dt>
                       <dd className="font-semibold text-[#20251f]">₹{featuredCourse.pricing.remainingFee.toLocaleString('en-IN')}</dd>
                     </div>
                     <div className="flex items-baseline justify-between gap-4">

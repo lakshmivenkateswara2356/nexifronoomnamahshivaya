@@ -108,7 +108,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
                   <p className="mt-1 text-sm text-[#687064]">Regular fee <span className="line-through">₹{course.pricing.regularFee.toLocaleString('en-IN')}</span></p>
                   <dl className="mt-6 space-y-4 border-t border-[#20251f]/15 pt-5 text-sm">
                     <div className="flex justify-between gap-4"><dt className="text-[#596253]">Upfront seat booking</dt><dd className="font-semibold text-[#20251f]">₹{course.pricing.bookingFee.toLocaleString('en-IN')}</dd></div>
-                    <div className="flex justify-between gap-4"><dt className="text-[#596253]">Remaining after paid internship offer</dt><dd className="font-semibold text-[#20251f]">₹{course.pricing.remainingFee.toLocaleString('en-IN')}</dd></div>
+                    <div className="flex justify-between gap-4"><dt className="text-[#596253]">Remaining after receiving an offer letter</dt><dd className="font-semibold text-[#20251f]">₹{course.pricing.remainingFee.toLocaleString('en-IN')}</dd></div>
                     <div className="flex justify-between gap-4"><dt className="text-[#596253]">Enrollment closes</dt><dd className="text-right font-semibold text-[#20251f]">{course.pricing.enrollmentDeadline}</dd></div>
                   </dl>
                   <p className="mt-5 text-xs leading-5 text-[#687064]">The displayed payment flow currently collects the ₹{course.pricing.bookingFee} seat-booking amount. Remaining-fee timing follows the course offer.</p>

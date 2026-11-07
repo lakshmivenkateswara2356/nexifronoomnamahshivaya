@@ -85,7 +85,7 @@ export const courses: CourseItem[] = [
     ],
     faq: [
       { question: 'How much is the first-batch fee?', answer: 'The first-batch fee is ₹14,999 for the first 50 seats, reduced from the regular fee of ₹33,999.' },
-      { question: 'What do I pay to book a seat?', answer: 'Pay ₹299 upfront to book your seat. The remaining ₹14,700 is due after receiving a paid internship offer.' },
+      { question: 'What do I pay to book a seat?', answer: 'Pay ₹299 upfront to book your seat. The remaining ₹14,700 is due after receiving an offer letter.' },
       { question: 'How long is the program?', answer: 'The live program runs for 8–12 weeks, followed by a 3-month paid internship opportunity.' },
     ],
   },
