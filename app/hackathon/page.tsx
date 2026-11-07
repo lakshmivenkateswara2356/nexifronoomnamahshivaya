@@ -1,4 +1,4 @@
-import { ArrowUpRight, CalendarDays, CircleDollarSign, Trophy } from 'lucide-react';
+import { ArrowUpRight, CalendarDays, CircleDollarSign, GraduationCap, Trophy } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
@@ -38,7 +38,7 @@ export default function HackathonPage() {
         </section>
 
         <section className="py-12 sm:py-16">
-          <Container className="grid gap-5 md:grid-cols-3">
+          <Container className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             <article className="rounded-lg border border-[#20251f]/10 bg-white p-6">
               <CircleDollarSign size={20} className="text-[#536e3a]" />
               <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#687064]">Prize opportunity</p>
@@ -56,6 +56,12 @@ export default function HackathonPage() {
               <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#687064]">Build. Present. Compete.</p>
               <p className="mt-2 text-xl font-semibold text-[#20251f]">Make your work count</p>
               <p className="mt-2 text-sm leading-6 text-[#687064]">Challenge format, team rules, and judging details are available from the organizing team.</p>
+            </article>
+            <article className="rounded-lg border border-[#20251f]/10 bg-[#e9ecdf] p-6">
+              <GraduationCap size={20} className="text-[#536e3a]" />
+              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#596253]">Course learner eligibility</p>
+              <p className="mt-2 text-xl font-semibold text-[#20251f]">Taken a Nexiquill course?</p>
+              <p className="mt-2 text-sm leading-6 text-[#596253]">You are eligible to participate in the tech hackathon. Contact the organizers for registration and event requirements.</p>
             </article>
           </Container>
         </section>

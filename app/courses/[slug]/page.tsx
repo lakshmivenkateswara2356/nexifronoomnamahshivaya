@@ -99,6 +99,15 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
                   <p className="mt-5 border-t border-white/10 pt-4 text-sm leading-6 text-white/65">Top performers may be considered for full-time roles in the ₹6.9–11 LPA range, subject to performance, interviews, role availability, and selection criteria. This is not a guaranteed outcome.</p>
                 </article>
               ) : null}
+              <article className="flex flex-col gap-4 rounded-lg border border-[#20251f]/10 bg-[#e9ecdf] p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
+                <div>
+                  <h2 className="text-lg font-semibold text-[#20251f]">Eligible for the Nexiquill tech hackathon</h2>
+                  <p className="mt-2 text-sm leading-6 text-[#687064]">Learners who have taken a Nexiquill course are eligible to participate. Check the hackathon page for registration details.</p>
+                </div>
+                <Link href="/hackathon" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#47533c] hover:text-[#20251f]">
+                  Hackathon details <ArrowUpRight size={15} />
+                </Link>
+              </article>
             </div>
 
             <aside className="h-fit rounded-lg border border-[#20251f]/10 bg-[#e9ecdf] p-6 sm:p-7 lg:sticky lg:top-24">

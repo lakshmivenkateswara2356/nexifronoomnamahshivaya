@@ -119,6 +119,18 @@ export default function CoursesPage() {
                 <CourseCard key={course.slug} course={course} />
               ))}
             </div>
+            <div className="mt-8 flex flex-col gap-5 rounded-lg border border-[#20251f]/10 bg-white p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
+              <div className="flex items-start gap-4">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md bg-[#e9ecdf] text-[#536e3a]"><GraduationCap size={19} /></span>
+                <div>
+                  <h3 className="font-semibold text-[#20251f]">Course learners are eligible for the tech hackathon</h3>
+                  <p className="mt-1 text-sm leading-6 text-[#687064]">If you have taken a Nexiquill course, you are eligible to participate. See the hackathon page for registration and event information.</p>
+                </div>
+              </div>
+              <Link href="/hackathon" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#47533c] hover:text-[#20251f]">
+                Hackathon details <ArrowRight size={15} />
+              </Link>
+            </div>
           </Container>
         </section>
 
