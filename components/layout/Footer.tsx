@@ -6,18 +6,26 @@ export function Footer() {
   return (
     <footer className="border-t border-[#20251f]/15 bg-[#e9ecdf] text-[#20251f]">
       <Container className="flex flex-col gap-10 py-12">
-        <div className="grid gap-10 md:grid-cols-[1.3fr_0.7fr_0.7fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.7fr]">
           <div>
             <Image src="/nexiquill-logo.svg" alt="Nexiquill, where IQ matters" width={800} height={150} className="h-10 w-auto" />
             <p className="mt-4 max-w-sm text-sm leading-6 text-[#687064]">
-              An end-to-end product engineering partner for ambitious teams building what&apos;s next.
+              Product engineering and practical technology learning for what&apos;s next.
             </p>
+          </div>
+
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-[#596253]">Explore</h3>
+            <ul className="mt-4 space-y-3 text-sm text-[#687064]">
+              <li><Link href="/courses">Courses</Link></li>
+              <li><Link href="/hackathon">Tech Hackathon</Link></li>
+              <li><Link href="/services">Services</Link></li>
+            </ul>
           </div>
 
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-[#596253]">Company</h3>
             <ul className="mt-4 space-y-3 text-sm text-[#687064]">
-              <li><Link href="/services">Services</Link></li>
               <li><Link href="/about">About</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>

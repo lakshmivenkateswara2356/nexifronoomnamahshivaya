@@ -1,4 +1,5 @@
-import { ArrowRight, ArrowUpRight, BrainCircuit, CloudCog, Code2, Layers3, LifeBuoy, ShieldCheck, Workflow } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BrainCircuit, CloudCog, Code2, GraduationCap, Layers3, LifeBuoy, ShieldCheck, Trophy, Workflow } from 'lucide-react';
+import Link from 'next/link';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
@@ -41,6 +42,30 @@ export default function HomePage() {
           </Container>
         </section>
         <section className="border-b border-[#20251f]/10 bg-[#e9ecdf] py-5"><Container className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-xs font-medium text-[#566051]"><span className="text-[10px] font-semibold tracking-[0.16em] text-[#80897b]">ONE PARTNER, END TO END</span><span>Product strategy</span><span>Experience design</span><span>Engineering</span><span>Cloud & AI</span><span>Ongoing support</span></Container></section>
+        <section className="py-20 sm:py-24" id="academy">
+          <Container>
+            <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+              <div><p className="section-kicker">LEARN, BUILD, COMPETE</p><h2 className="section-title">Grow your technology skills with Nexiquill.</h2></div>
+              <p className="max-w-md leading-7 text-[#687064]">Explore practical learning programs and put your ideas to the test in our upcoming tech hackathon.</p>
+            </div>
+            <div className="mt-10 grid gap-5 md:grid-cols-2">
+              <Link href="/courses" className="group rounded-lg border border-[#20251f]/10 bg-white p-7 transition-colors hover:bg-[#fbfcf8] sm:p-9">
+                <div className="flex items-center justify-between"><span className="grid h-11 w-11 place-items-center rounded-md bg-[#e9ecdf] text-[#536e3a]"><GraduationCap size={21} /></span><ArrowUpRight size={17} className="text-[#818a7c] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></div>
+                <p className="mt-7 text-xs font-semibold tracking-[0.15em] text-[#738064]">NEXIQUILL ACADEMY</p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-[#20251f]">Python Full Stack + Generative AI</h3>
+                <p className="mt-3 max-w-lg text-sm leading-6 text-[#687064]">Live learning, real-world projects, clear first-batch pricing, and a 3-month paid internship opportunity.</p>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#47533c]">Explore courses <ArrowRight size={15} /></span>
+              </Link>
+              <Link href="/hackathon" className="group rounded-lg bg-[#20251f] p-7 text-[#f6f7f1] transition-colors hover:bg-[#293027] sm:p-9">
+                <div className="flex items-center justify-between"><span className="grid h-11 w-11 place-items-center rounded-md bg-white/10 text-[#d8f078]"><Trophy size={20} /></span><ArrowUpRight size={17} className="text-white/50 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></div>
+                <p className="mt-7 text-xs font-semibold tracking-[0.15em] text-[#d8f078]">NEXIQUILL TECH HACKATHON</p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight">Build something worth sharing.</h3>
+                <p className="mt-3 max-w-lg text-sm leading-6 text-white/60">Prize money up to ₹1 lakh. Registration closes 18 November 2026.</p>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#d8f078]">View hackathon details <ArrowRight size={15} /></span>
+              </Link>
+            </div>
+          </Container>
+        </section>
         <section className="py-24 sm:py-28" id="services"><Container><div className="flex flex-col justify-between gap-6 md:flex-row md:items-end"><div className="max-w-2xl"><p className="section-kicker">WHAT WE DO</p><h2 className="section-title">Everything your product needs to go further.</h2></div><p className="max-w-md pb-1 text-base leading-7 text-[#697165]">From a first clickable idea to the systems behind your next stage of growth, we bring the right disciplines together.</p></div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-[#20251f]/10 bg-[#20251f]/10 sm:grid-cols-2 xl:grid-cols-3">{[
             [Layers3, 'SaaS product development', 'From first product brief to a secure, scalable platform your customers can rely on.'], [Code2, 'Web applications', 'Fast, considered web experiences built around the work your users need to get done.'], [BrainCircuit, 'AI & automation', 'Useful AI features and workflow automation, integrated with care and clear guardrails.'], [CloudCog, 'Cloud & DevOps', 'Cloud foundations, delivery pipelines, and observability designed for steady growth.'], [Workflow, 'Product modernization', 'Make legacy systems easier to change, more reliable, and ready for what comes next.'], [LifeBuoy, 'Ongoing engineering', 'A long-term product partner for improvements, support, and the next release.'],

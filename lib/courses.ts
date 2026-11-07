@@ -1,7 +1,6 @@
 export type CourseStatus = 'OPEN' | 'CLOSED';
 
 export type CourseItem = {
-  id: string;
   title: string;
   slug: string;
   description: string;
@@ -14,32 +13,83 @@ export type CourseItem = {
   learningOverview: string[];
   projects: string[];
   faq: { question: string; answer: string }[];
+  pricing?: {
+    regularFee: number;
+    batchFee: number;
+    bookingFee: number;
+    remainingFee: number;
+    seatLimit: number;
+    enrollmentDeadline: string;
+  };
 };
 
 export const courses: CourseItem[] = [
   {
-    id: 'c1',
     title: 'Python Full Stack + GenAI',
     slug: 'python-full-stack-genai',
     description:
-      'Learn Python full-stack development, modern frontend technologies, APIs, databases and Generative AI.',
+      'Build practical full-stack skills with Python, React, databases, and Generative AI through live learning and real-world projects.',
     shortDescription:
-      'Learn Python full-stack development, modern frontend technologies, APIs, databases and Generative AI.',
+      'Python, React, databases, and Generative AI with hands-on projects and a paid internship opportunity.',
     fee: 299,
     status: 'OPEN',
-    duration: '12 weeks',
+    duration: '8–12 weeks',
+    pricing: {
+      regularFee: 33999,
+      batchFee: 14999,
+      bookingFee: 299,
+      remainingFee: 14700,
+      seatLimit: 50,
+      enrollmentDeadline: '10 November 2026',
+    },
     image: '/images/courses/python-genai.jpg',
-    technologies: ['Python', 'HTML', 'CSS', 'JavaScript', 'React', 'APIs', 'SQL', 'Generative AI', 'LLMs'],
-    learningOverview: ['Build Python-based backend systems', 'Create modern frontend interfaces', 'Integrate APIs and databases', 'Work with GenAI workflows'],
-    projects: ['AI Resume Analyzer', 'Full Stack Dashboard', 'Smart API integrations'],
+    technologies: [
+      'Python',
+      'Django',
+      'FastAPI',
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'React',
+      'Node.js',
+      'PostgreSQL',
+      'MongoDB',
+      'MySQL',
+      'Generative AI',
+      'LLMs',
+      'LangChain',
+      'Vector databases',
+      'RAG',
+      'Git',
+      'GitHub',
+      'DevOps',
+    ],
+    learningOverview: [
+      'Python programming from core to advanced',
+      'Web development with Django and FastAPI',
+      'Frontend development with React.js',
+      'Backend development with Node.js',
+      'PostgreSQL, MongoDB, MySQL, and API integration',
+      'Generative AI, LLMs, LangChain, vector databases, and RAG',
+      'Git, GitHub, DevOps basics, system design, and deployment',
+      'Build and deploy real-world applications',
+    ],
+    projects: [
+      'AI-powered chat application',
+      'Document Q&A with RAG',
+      'AI Resume Analyzer',
+      'Full-stack e-commerce application',
+      'AI customer-support bot',
+      'AI image and text generation app',
+      'End-to-end capstone project',
+    ],
     faq: [
-      { question: 'What is the enrollment fee?', answer: 'The initial enrollment fee is ₹299.' },
-      { question: 'Which courses are currently open?', answer: 'Python Full Stack + GenAI and Frontend Development + GenAI are currently open.' },
-      { question: 'When do I pay ₹24,700?', answer: 'The ₹24,700 course and job support fee is due to Nexiquill only after you receive an offer letter and get placed. If you do not receive an offer letter or do not get placed, you owe Nexiquill no additional money beyond the ₹299 enrollment fee.' },
+      { question: 'How much is the first-batch fee?', answer: 'The first-batch fee is ₹14,999 for the first 50 seats, reduced from the regular fee of ₹33,999.' },
+      { question: 'What do I pay to book a seat?', answer: 'Pay ₹299 upfront to book your seat. The remaining ₹14,700 is due after receiving a paid internship offer.' },
+      { question: 'How long is the program?', answer: 'The live program runs for 8–12 weeks, followed by a 3-month paid internship opportunity.' },
     ],
   },
   {
-    id: 'c2',
     title: 'Frontend Development + GenAI',
     slug: 'frontend-development-genai',
     description:
@@ -54,13 +104,11 @@ export const courses: CourseItem[] = [
     learningOverview: ['Responsive product interfaces', 'Frontend architecture patterns', 'AI-assisted workflows', 'Debugging and project builds'],
     projects: ['AI Interview Assistant', 'E-Commerce Application', 'Portfolio website build'],
     faq: [
-      { question: 'What is the enrollment fee?', answer: 'The initial enrollment fee is ₹299.' },
-      { question: 'Which courses are currently open?', answer: 'Python Full Stack + GenAI and Frontend Development + GenAI are currently open.' },
-      { question: 'When do I pay ₹24,700?', answer: 'The ₹24,700 course and job support fee is due to Nexiquill only after you receive an offer letter and get placed. If you do not receive an offer letter or do not get placed, you owe Nexiquill no additional money beyond the ₹299 enrollment fee.' },
+      { question: 'How do I enquire about fees?', answer: 'Contact the Nexiquill team for current batch pricing and payment details.' },
+      { question: 'What is the program duration?', answer: 'This program runs for 10 weeks.' },
     ],
   },
   {
-    id: 'c3',
     title: 'Node.js Full Stack + React + LLM',
     slug: 'nodejs-full-stack-react-llm',
     description:
@@ -79,7 +127,6 @@ export const courses: CourseItem[] = [
     ],
   },
   {
-    id: 'c4',
     title: 'DevOps',
     slug: 'devops',
     description:

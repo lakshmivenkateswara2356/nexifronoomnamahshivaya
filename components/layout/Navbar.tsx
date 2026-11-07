@@ -8,6 +8,8 @@ import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 
 const navItems = [
+  { label: 'Courses', href: '/courses' },
+  { label: 'Hackathon', href: '/hackathon' },
   { label: 'Services', href: '/services' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
@@ -23,7 +25,7 @@ export function Navbar() {
           <Image src="/nexiquill-logo.svg" alt="Nexiquill, where IQ matters" width={800} height={150} priority className="h-9 w-auto sm:h-11" />
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-5 lg:flex">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} className="text-sm text-[#626b5f] transition hover:text-[#20251f]">
               {item.label}
@@ -31,7 +33,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Button href="/contact" className="gap-2 rounded-md bg-[#20251f] px-4 py-2.5 text-white shadow-none hover:bg-[#394136]">
             Let&apos;s talk <ArrowUpRight size={15} />
           </Button>
@@ -39,7 +41,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex rounded-md border border-[#20251f]/15 p-2 text-[#20251f] md:hidden"
+          className="inline-flex rounded-md border border-[#20251f]/15 p-2 text-[#20251f] lg:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-label="Toggle navigation menu"
         >
@@ -48,7 +50,7 @@ export function Navbar() {
       </Container>
 
       {open ? (
-        <div className="border-t border-[#20251f]/10 bg-[#f6f7f1] md:hidden">
+        <div className="border-t border-[#20251f]/10 bg-[#f6f7f1] lg:hidden">
           <Container className="flex flex-col gap-4 py-4">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="py-1 text-[#626b5f]">

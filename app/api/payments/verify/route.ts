@@ -28,6 +28,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, message: 'Enrollment not found.' }, { status: 404 });
     }
 
+    if (enrollment.razorpayOrderId !== parsed.data.razorpay_order_id) {
+      return NextResponse.json({ success: false, message: 'Payment order does not match this enrollment.' }, { status: 400 });
+    }
+
     const isValid = verifyRazorpaySignature({
       orderId: parsed.data.razorpay_order_id,
       paymentId: parsed.data.razorpay_payment_id,

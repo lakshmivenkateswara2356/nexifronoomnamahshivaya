@@ -15,14 +15,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
   title: {
-    default: 'Nexiquill | Product Engineering & SaaS Development',
+    default: 'Nexiquill | Product Engineering & Tech Academy',
     template: '%s | Nexiquill',
   },
   description:
-    'Nexiquill builds SaaS products, web applications, AI solutions, and cloud platforms for ambitious teams, from product discovery through ongoing engineering.',
+    'Nexiquill builds digital products and helps learners develop practical technology skills through projects, courses, and hackathons.',
   openGraph: {
     title: 'Nexiquill',
-    description: 'End-to-end product engineering for what comes next.',
+    description: 'Product engineering and practical technology learning for what comes next.',
     url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
     siteName: 'Nexiquill',
     type: 'website',
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Nexiquill',
-    description: 'SaaS development, AI, cloud, and product engineering with one team from idea through iteration.',
+    description: 'Product engineering, practical technology courses, and hackathons from Nexiquill.',
   },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full bg-[#050816] text-white">{children}</body>
+      <body className="min-h-full bg-background text-foreground">{children}</body>
     </html>
   );
 }

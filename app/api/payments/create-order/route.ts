@@ -23,7 +23,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, message: 'Invalid request payload.' }, { status: 400 });
     }
 
-    const course = await prisma.course.findUnique({ where: { id: parsed.data.courseId } });
+    const course = await prisma.course.findFirst({
+      where: {
+        OR: [
+          { id: parsed.data.courseId },
+          { slug: parsed.data.courseId },
+        ],
+      },
+    });
     if (!course || course.status !== 'OPEN') {
       return NextResponse.json({ success: false, message: 'Course is unavailable.' }, { status: 400 });
     }
@@ -31,7 +38,7 @@ export async function POST(request: Request) {
     const existing = await prisma.enrollment.findFirst({
       where: {
         email: parsed.data.email.toLowerCase(),
-        courseId: parsed.data.courseId,
+        courseId: course.id,
       },
     });
 
@@ -44,7 +51,7 @@ export async function POST(request: Request) {
         qualification: parsed.data.qualification || null,
         graduationYear: parsed.data.graduationYear ? Number(parsed.data.graduationYear) : null,
         city: parsed.data.city || null,
-        courseId: parsed.data.courseId,
+        courseId: course.id,
         amount: course.fee,
         paymentStatus: 'PENDING',
       },
@@ -55,6 +62,10 @@ export async function POST(request: Request) {
     }
 
     if (!razorpay) {
+      return NextResponse.json({ success: false, message: 'Payment service is not configured.' }, { status: 500 });
+    }
+
+    if (!process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID) {
       return NextResponse.json({ success: false, message: 'Payment service is not configured.' }, { status: 500 });
     }
 
@@ -92,7 +103,7 @@ export async function POST(request: Request) {
       success: true,
       data: {
         orderId: order.id,
-        amount: course.fee,
+        amount: order.amount,
         currency: 'INR',
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
         enrollmentId: enrollment.id,

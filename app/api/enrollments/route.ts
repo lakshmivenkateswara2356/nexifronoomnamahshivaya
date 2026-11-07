@@ -35,7 +35,14 @@ export async function POST(request: Request) {
       city: parsed.data.city ? sanitizeInput(parsed.data.city) : null,
     };
 
-    const course = await prisma.course.findUnique({ where: { id: sanitizedBody.courseId } });
+    const course = await prisma.course.findFirst({
+      where: {
+        OR: [
+          { id: sanitizedBody.courseId },
+          { slug: sanitizedBody.courseId },
+        ],
+      },
+    });
 
     if (!course || course.status !== 'OPEN') {
       return NextResponse.json(
@@ -47,7 +54,7 @@ export async function POST(request: Request) {
     const existing = await prisma.enrollment.findFirst({
       where: {
         email: sanitizedBody.email,
-        courseId: sanitizedBody.courseId,
+        courseId: course.id,
         paymentStatus: { not: 'FAILED' },
       },
     });
@@ -68,7 +75,7 @@ export async function POST(request: Request) {
         qualification: sanitizedBody.qualification,
         graduationYear: sanitizedBody.graduationYear,
         city: sanitizedBody.city,
-        courseId: sanitizedBody.courseId,
+        courseId: course.id,
         amount: course.fee,
         paymentStatus: 'PENDING',
       },
