@@ -60,7 +60,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between"><span className="grid h-11 w-11 place-items-center rounded-md bg-white/10 text-[#d8f078]"><Trophy size={20} /></span><ArrowUpRight size={17} className="text-white/50 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></div>
                 <p className="mt-7 text-xs font-semibold tracking-[0.15em] text-[#d8f078]">NEXIQUILL TECH HACKATHON</p>
                 <h3 className="mt-3 text-2xl font-semibold tracking-tight">Build something worth sharing.</h3>
-                <p className="mt-3 max-w-lg text-sm leading-6 text-white/60">Prize money up to ₹1 lakh. Registration closes 18 November 2026.</p>
+                <p className="mt-3 max-w-lg text-sm leading-6 text-white/60">Prize money up to ₹1 lakh. Registration closes 25 November 2026.</p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#d8f078]">View hackathon details <ArrowRight size={15} /></span>
               </Link>
             </div>

@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/Container';
 
 export const metadata = {
   title: 'Tech Hackathon',
-  description: 'Join the Nexiquill tech hackathon. Registration closes 18 November 2026, with prizes worth up to ₹1 lakh.',
+  description: 'Join the Nexiquill tech hackathon. Registration closes 25 November 2026, with prizes worth up to ₹1 lakh.',
 };
 
 const whatsappUrl = 'https://wa.me/919505325418?text=Hi%20Nexiquill%2C%20I%27d%20like%20to%20know%20about%20the%20tech%20hackathon.';
@@ -48,7 +48,7 @@ export default function HackathonPage() {
             <article className="rounded-lg border border-[#20251f]/10 bg-white p-6">
               <CalendarDays size={20} className="text-[#536e3a]" />
               <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#687064]">Registration closes</p>
-              <p className="mt-2 text-3xl font-semibold tracking-tight text-[#20251f]">18 November 2026</p>
+              <p className="mt-2 text-3xl font-semibold tracking-tight text-[#20251f]">25 November 2026</p>
               <p className="mt-2 text-sm leading-6 text-[#687064]">Get in touch with Nexiquill before registration closes to confirm how to take part.</p>
             </article>
             <article className="rounded-lg border border-[#20251f]/10 bg-white p-6">
@@ -97,7 +97,7 @@ export default function HackathonPage() {
           <Container>
             <div className="flex flex-col gap-6 rounded-lg bg-[#20251f] p-7 text-[#f6f7f1] sm:p-10 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="text-xs font-semibold tracking-[0.16em] text-[#d8f078]">REGISTRATION CLOSES 18 NOVEMBER 2026</p>
+                <p className="text-xs font-semibold tracking-[0.16em] text-[#d8f078]">REGISTRATION CLOSES 25 NOVEMBER 2026</p>
                 <h2 className="mt-3 text-2xl font-semibold sm:text-3xl">Have questions about the challenge?</h2>
                 <p className="mt-2 text-sm text-white/60">Ask the team for registration, eligibility, and event details.</p>
               </div>
